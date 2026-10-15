@@ -1,0 +1,36 @@
+{
+  "name": "@agora/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Agora 辩论游戏后端 · P0（Hono + SSE）",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "smoke": "tsx scripts/smoke.ts",
+    "pace": "tsx scripts/pace.ts",
+    "probe": "tsx scripts/persona-probe.ts",
+    "guard-test": "tsx scripts/guard-test.ts",
+    "length-stats": "tsx scripts/length-stats.ts",
+    "mock-test": "tsx scripts/mock-test.ts",
+    "fe-smoke": "tsx scripts/frontend-smoke.ts",
+    "e2e": "tsx scripts/e2e.ts",
+    "ping": "tsx scripts/ping.ts",
+    "origin": "tsx scripts/origin-probe.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "dotenv": "^18.0.7",
+    "hono": "^4.6.14",
+    "tsx": "^4.19.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

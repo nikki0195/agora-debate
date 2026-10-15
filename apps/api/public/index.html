@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+<meta name="theme-color" content="#f6f5f2" />
+<title>Agora · 雅典广场</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- ═══════════ 大厅 ═══════════ -->
+<section id="view-lobby" class="view">
+  <header class="lobby-head">
+    <h1>Agora<span>雅典广场</span></h1>
+    <p class="tagline">与先贤一战 · 不判胜负，只谈论证</p>
+  </header>
+  <div class="lobby-scroll">
+    <h2 class="sec-title">选择模式</h2>
+    <div id="mode-pick" class="mode-pick">
+      <button class="mode-card on" data-mode="demo" type="button">
+        <span class="m-glyph">试</span>
+        <span class="m-name">试玩体验</span>
+        <span class="m-line">零消耗 · 保底演示</span>
+        <span class="m-sub">本地剧本秒回，断网也能玩</span>
+      </button>
+      <button class="mode-card" data-mode="deep" type="button">
+        <span class="m-glyph deep">深</span>
+        <span class="m-name">深度体验</span>
+        <span class="m-line">真实先贤 · 自由辩论</span>
+        <span class="m-sub">实时生成，回应你的每一句话</span>
+      </button>
+    </div>
+    <p id="mode-hint" class="mode-hint">内置剧本 · 辩题锁定「人性本善还是本恶」· 2 轮 · 点击选项推进剧情</p>
+
+    <h2 class="sec-title">选择你的对手</h2>
+    <div id="persona-cards" class="persona-rail"></div>
+
+    <div id="deep-picks">
+      <h2 class="sec-title">选择辩题</h2>
+      <div class="topic-tabs">
+        <button data-cat="all" class="on">全部</button>
+        <button data-cat="traditional">传统</button>
+        <button data-cat="contemporary">当代</button>
+      </div>
+      <div id="topic-list" class="topic-list"></div>
+
+      <div class="setup-row">
+        <div class="setup-item">
+          <label>你的立场</label>
+          <div id="stance-pick" class="seg">
+            <button data-v="pro" class="on">正方</button>
+            <button data-v="con">反方</button>
+          </div>
+        </div>
+        <div class="setup-item">
+          <label>交锋回合</label>
+          <div id="rounds-pick" class="seg">
+            <button data-v="6" class="on">6 回合</button>
+            <button data-v="8">8 回合</button>
+            <button data-v="10">10 回合</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="btn-begin" class="primary big" disabled>开始试玩</button>
+
+    <h2 class="sec-title">
+      对局历史
+      <button id="btn-clear-history" class="link-danger">清空</button>
+    </h2>
+    <div id="history-list" class="history-list"></div>
+  </div>
+</section>
+
+<!-- ═══════════ 辩论室 ═══════════ -->
+<section id="view-debate" class="view" hidden>
+  <header class="debate-head">
+    <button id="btn-quit" class="icon-btn" aria-label="退出">‹</button>
+    <div class="debate-head-main">
+      <strong id="dh-name">先贤</strong>
+      <span id="dh-topic">辩题</span>
+    </div>
+    <div id="dh-rounds" class="rounds-pill">1/6</div>
+  </header>
+  <div id="log"></div>
+  <footer class="composer" id="composer">
+    <textarea id="input" rows="1" placeholder="说出你的观点…（≤500 字）" disabled></textarea>
+    <button id="send" class="primary" disabled>发言</button>
+    <button id="judge" class="ghost" hidden>裁判点评</button>
+  </footer>
+  <p id="deep-hint" class="debate-foot-note" hidden>消耗演示额度，请轻拍</p>
+  <div id="demo-options" class="demo-options" hidden></div>
+</section>
+
+<!-- ═══════════ 结算 ═══════════ -->
+<section id="view-result" class="view" hidden>
+  <header class="result-head">
+    <h1>裁判点评</h1>
+    <p class="tagline">不判胜负，只谈论证</p>
+  </header>
+  <div class="result-scroll">
+    <div id="verdict-card"></div>
+    <h2 class="sec-title">分享卡片</h2>
+    <img id="share-img" alt="分享卡片" />
+    <div class="share-actions">
+      <button id="btn-save" class="primary">保存图片</button>
+      <button id="btn-again" class="ghost">再战一局</button>
+      <button id="btn-home" class="ghost">回到大厅</button>
+    </div>
+    <p class="share-hint">微信内可长按图片保存，分享给同学</p>
+  </div>
+</section>
+
+<script src="/agora.config.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
